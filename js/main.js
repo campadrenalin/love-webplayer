@@ -84,7 +84,17 @@ function LuaBootStrap () {
 		love_module['_version_major'] = 0; // 0.8.0 ... 0? or 8?
 		love_module['_version_minor'] = 8;
 		love_module['_version_rev']   = 0;
-	}
+	} else {
+		love_module['_version_major'] = 0;
+		love_module['_version_minor'] = 7;
+		love_module['_version_rev']   = 2;
+    }
+
+    love_module['_version'] = [
+        love_module._version_major,
+        love_module._version_minor,
+        love_module._version_rev
+    ].join('.');
 	
 	// callback defaults
 	// note : could maybe be done by lua_libs['love']['load'] = ...
