@@ -131,6 +131,10 @@ function LuaBootStrap () {
 	// replace default lua.js require
     console.log("Replacing require")
 	Lua.inject(function (path) {
+        // Check cache first
+        var cached = Lua.cache("package.loaded['" + path + "']")[0];
+        if (cached) return [cached];
+
 		// builtin libs
 		if (path == "socket.http") { return LoveRequireSocketHTTP(); }
 		
