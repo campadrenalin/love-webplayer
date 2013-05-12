@@ -43,7 +43,7 @@ function LoveFileList (url) {
 // Returns a table with the names of files and subdirectories in the directory in an undefined order. 
 // example: "dira" contains 1 file (a.txt) and 2 subdirs (diraa,dirab) :   love.filesystem.enumerate("dira") (="dira/") = {"a.txt","diraa","dirab"}
 function LoveFilesystemEnumerate (path) {
-	if (!gFilesystemEnumerateList) return NotImplemented(pre+'enumerate (try index.html body onload : LoveFileList("filelist.txt") from "find . > filelist.txt")');
+	if (!gFilesystemEnumerateList) return NotImplemented('love.filesystem.enumerate (try index.html body onload : LoveFileList("filelist.txt") from "find . > filelist.txt")');
 	var res = {};
 	if (path.substring(path.length - 1) == "/") path = path.substring(0,path.length - 1); // remove trailing /
 	path = LoveFSNormalizePath(path);
